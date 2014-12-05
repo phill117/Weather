@@ -6,12 +6,31 @@
     android:background="@color/ASBlack">
 
     <RelativeLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/date"
+            android:gravity="center"
+            android:text="February 28, 2014"
+            android:textColor="@color/WhiteSmoke"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/day"
+            android:layout_below="@+id/date"
+            android:gravity="center"
+            android:text="Tuesday"
+            android:textColor="@color/WhiteSmoke"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <ImageView
-            android:layout_marginTop="60dp"
+            android:layout_below="@+id/day"
+            android:layout_marginTop="20dp"
             android:id="@+id/today_icon"
             android:contentDescription="weather type"
             android:src="@drawable/placeholder"
@@ -19,15 +38,90 @@
             android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/condition"
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:layout_below="@id/today_icon"
             android:text="Condition"
             android:textColor="@color/WhiteSmoke"
+            android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        
+        <TextView
+            android:id="@+id/currentTemp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@id/condition"
+            android:text="F 50&#176;"
+            android:textColor="@color/WhiteSmoke"
+            android:textSize="60sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/currentTemp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/hi"
+                    android:gravity="center"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="Hi 63&#176;"
+                    android:textSize="35sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/low"
+                    android:gravity="center"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="Low 47&#176;"
+                    android:textSize="35sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/wind"
+                    android:gravity="center"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="Wind"
+                    android:textSize="35sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/humidity"
+                    android:gravity="center"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="Humidity"
+                    android:textSize="35sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
 
     </RelativeLayout>
 

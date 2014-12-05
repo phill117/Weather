@@ -2,12 +2,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="weather.android.purdue.edu.weather.WeeksWeatherFragment">
+    tools:context="weather.android.purdue.edu.weather.WeeksWeatherFragment"
+    android:background="@color/ASBlack">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:id="@+id/today_icon"
+            android:contentDescription="weather type"
+            android:src="@drawable/placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/condition"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@id/today_icon"
+            android:text="Condition"
+            android:textColor="@color/WhiteSmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/subDay1"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="Mon"/>
+                <ImageView
+                    android:id="@+id/subCondition1"
+                    android:layout_gravity="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@color/WhiteSmoke"/>
+                <TextView
+                    android:id="@+id/subHigh1"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="High"/>
+                <TextView
+                    android:id="@+id/subLow1"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/WhiteSmoke"
+                    android:text="low"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
 
 </FrameLayout>

@@ -3,23 +3,17 @@ package weather.android.purdue.edu.weather;
 import java.util.Locale;
 
 import android.app.Activity;
-import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.net.Uri;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 
-public class WeatherActivity extends Activity {
+public class WeatherActivity extends Activity implements OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -73,7 +67,10 @@ public class WeatherActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -92,7 +89,7 @@ public class WeatherActivity extends Activity {
             if(position == 0)
                 return TodaysWeatherFragment.newInstance();
             else
-                return  WeeksWeatherFragment.newInstance();
+                return WeeksWeatherFragment.newInstance();
         }
 
         @Override
@@ -106,13 +103,12 @@ public class WeatherActivity extends Activity {
             Locale l = Locale.getDefault();
             switch (position) {
                 case 0:
-                    return getString(R.string.title_section1).toUpperCase(l);
+                    return getString(R.string.today).toUpperCase(l);
                 case 1:
-                    return getString(R.string.title_section2).toUpperCase(l);
+                    return getString(R.string.week).toUpperCase(l);
             }
             return null;
         }
     }
-
 
 }
