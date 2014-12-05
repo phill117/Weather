@@ -1,0 +1,35 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="weather.android.purdue.edu.weather.TodaysWeatherFragment"
+    android:background="@color/ASBlack">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:id="@+id/today_icon"
+            android:contentDescription="weather type"
+            android:src="@drawable/placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_below="@id/today_icon"
+            android:text="Condition"
+            android:textColor="@color/WhiteSmoke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        
+
+    </RelativeLayout>
+
+
+</FrameLayout>
