@@ -53,7 +53,7 @@
             android:layout_marginTop="10dp"
             android:gravity="center"
             android:layout_below="@id/condition"
-            android:text="F 50&#176;"
+            android:text="50&#176;F"
             android:textColor="@color/WhiteSmoke"
             android:textSize="60sp"
             android:layout_width="match_parent"

@@ -2,18 +2,20 @@ package weather.android.purdue.edu.weather;
 
 import java.util.Locale;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.net.Uri;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class WeatherActivity extends Activity implements OnFragmentInteractionListener{
+public class WeatherActivity extends Activity implements OnFragmentInteractionListener, ActionBar.TabListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -32,9 +34,23 @@ public class WeatherActivity extends Activity implements OnFragmentInteractionLi
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final ActionBar actionBar = getActionBar();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        // Specify that tabs should be displayed in the action bar.
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        // Add 2 tabs, specifying the tab's text and TabListener
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText("TODAY")
+                        .setTabListener(this));
+        actionBar.addTab(
+                actionBar.newTab()
+                        .setText("WEEKLY")
+                        .setTabListener(this));
 
 
         // Create the adapter that will return a fragment for each of the three
@@ -69,6 +85,25 @@ public class WeatherActivity extends Activity implements OnFragmentInteractionLi
 
     @Override
     public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
+        if(tab.getText().toString().equals("Today")){
+
+        }else{
+            
+        }
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
+
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, android.app.FragmentTransaction ft) {
 
     }
 
